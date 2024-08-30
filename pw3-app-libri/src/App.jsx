@@ -1,31 +1,30 @@
-import './App.css'
-import CardBooks from './components/CardBooks'
-import capaLivro from './assets/carmilla.jpg'
-import capaLivro2 from './assets/dracula.jpg'
- 
-function App() {
- 
- 
-  return (
-    <div className='nsei' >
+import './App.css';
 
-      <div>
-       <CardBooks
-      titulo ='carmilla'
-      autor= 'sheridan fenu'
-      imagem={capaLivro}
-      />
-      </div>
-      <div>
-      <CardBooks
-      titulo ='dracula'
-      autor= 'Bram Stoker'
-      imagem={capaLivro2}
-      />
-      </div>
-    </div>
-  
+import { BrowserRouter, Routes ,Route } from 'react-router-dom';
+
+import NavBar from './components/layout/NavBar';
+import Container from './components/layout/container'
+
+import Home from  './components/pages/home'
+import List from  './components/pages/ListBooks'
+import Create from  './components/pages/CreateBooks'
+
+function App(){
+
+  return(
+    <>
+    <BrowserRouter>
+      <Container>
+          <Routes>
+            <Route path='/' element={<NavBar/>}>
+            <Route path='/' element={<Home/>}/>
+            <Route path='/ListBooks' element={<List/>}/>
+            <Route path='/createBook' element={<Create/>}/>
+            </Route>
+          </Routes>
+      </Container>
+    </BrowserRouter>
+    </>
   )
 }
- 
-export default App
+export default App;

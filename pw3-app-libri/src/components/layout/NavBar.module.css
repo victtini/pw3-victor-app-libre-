@@ -1,0 +1,32 @@
+/* container menu */
+    .NavBar{
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(34, 38, 48);
+        padding: 1em;
+    }
+
+/* regras da lista */
+.list{
+    display: flex;
+    list-style: none;
+    align-self: center;
+    justify-content: space-between;
+}
+
+
+/* regar dos links */
+.item{
+    margin-right: 1em;
+    color: beige;
+    font-size: 1.5em;
+    transition: 0.5s;
+}
+.item:hover{
+    background-color: rgb(100, 10, 185); color: rgb(0, 0, 0);
+}
+.logo{
+    width: 120px;
+    height: 120px;
+ }
+
