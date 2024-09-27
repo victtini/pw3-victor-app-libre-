@@ -1,19 +1,24 @@
-import Style from './Select.module.css';
+import styles from "./Select.module.css"
 
-function Select({name, text}){
+function Select({type, name, text, options}){
     return(
-        <div>
-        
-        <label htmlFor={name}>{text}</label>
-        <select name={name} id ={name}>
-            <option>ficção cientifica</option>
-            <option>fantasia heroica</option>
-            <option>suspence</option>
-            <option>terro</option>
-        </select>
+        <div className={styles.form_control}>
 
+            <label htmlFor={name}>{text}</label>
+            <select name={name} id={name}>
+
+            <option>Selecione uma categoria</option>
+
+                {
+                    options.map((option)=>{
+                    //    console.log( option.cod_categoria + ' - ' + option.nome_categoria) 
+                       return <option>{option.nome_categoria}</option>
+                    })
+                }
+    
+            </select>
         </div>
     )
 }
 
-export default Select;
+export default Select
