@@ -11,7 +11,7 @@ const NavBar =()=>{
             <ul className={style.list}>
 
             <Link to='/'>
-            <li><img src='./rock.png' alt="" className={style.logo} /></li>
+            <li><img src='./witch.png' alt="" className={style.logo} /></li>
             </Link>
 
             <Link to='/'>
