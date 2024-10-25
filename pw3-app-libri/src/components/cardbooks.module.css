@@ -1,8 +1,9 @@
-
 .conteiner{
     background-color: rgb(59, 59, 59);
     text-align: center;
     border-radius: 20px;
+    margin: 5px;
+    padding: 5px;
 
 }    
 

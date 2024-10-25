@@ -1,30 +1,52 @@
-import './App.css';
+/* IMPORTA O CSS */
+import './App.css'
 
-import { BrowserRouter, Routes ,Route } from 'react-router-dom';
+//IMPORTA O COMPONENTE CONTAINER
+import Container from './components/layout/Container'
 
-import NavBar from './components/layout/NavBar';
-import Container from './components/layout/container'
+//IMPORTA O COMPONENTE NAVBAR
+import NavBar from './components/layout/NavBar'
 
-import Home from  './components/pages/Home'
-import List from  './components/pages/ListBooks'
-import Create from  './components/pages/CreateBooks'
+// IMPORTA OS COMPONENTES DE NAVEGAÇÃO DA APLICAÇÃO
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App(){
+//
+import Home from './components/pages/Home'
 
-  return(
+import CreateBooks from './components/pages/CreateBooks' 
+
+import ListBooks from './components/pages/ListBooks' 
+import DeitailBook from './components/pages/DetailBook'
+
+
+function App() {
+ 
+ 
+  return (
     <>
-    <BrowserRouter>
-      <Container>
-          <Routes>
-            <Route path='/' element={<NavBar/>}>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/ListBooks' element={<List/>}/>
-            <Route path='/createBook' element={<Create/>}/>
-            </Route>
-          </Routes>
-      </Container>
-    </BrowserRouter>
+
+      {/* ESTRUTURA DE NAVEGAÇÃO */}
+        <BrowserRouter>
+
+          <Container>
+
+            <Routes>
+
+              <Route path='/' element={<NavBar />}>
+                <Route path='/' element={<Home />}/>
+                <Route path='/listBooks' element={<ListBooks />}/>
+                <Route path='/createBooks' element={<CreateBooks />}/>
+                <Route path='/DetailBook/:cod_livro' element={<DeitailBook />}/>
+              </Route>
+
+            </Routes>
+
+          </Container>
+
+        </BrowserRouter>
+
     </>
   )
 }
-export default App;
+ 
+export default App
